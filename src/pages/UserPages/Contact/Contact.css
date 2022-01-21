@@ -1,0 +1,14 @@
+.contact_container {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 5%;
+}
+.map_container {
+  background-color: white;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
