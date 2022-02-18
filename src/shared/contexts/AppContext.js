@@ -12,7 +12,6 @@ const AppProvider = ({ children }) => {
   const { auth, firestore } = useFirebaseContext();
   const [applicants, setApplicants] = useState([]);
   const { loggedUser } = useAuthContext();
-  console.log("logged user is: ", loggedUser);
   const submitApplicationForm = (data) => {
     data.birth_date = moment(data.birth_date).format("L");
     data.expiry_date = moment(data.expiry_date).format("L");
@@ -61,7 +60,7 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchApplicants();
-  });
+  }, []);
   const payload = { submitApplicationForm, applicants, handleApplicantRequest };
   return <AppContext.Provider value={payload}>{children}</AppContext.Provider>;
 };
